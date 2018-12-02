@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: "My Life: Journey and beyond ..."
-email: animesh0721@gmail.com
+email: contact@kumaranimesh.me
 description: > # this means to ignore newlines until "baseurl:"
   This website is a personal blog of Animesh Kumar where he shares his life experiences and
   anything which he discovers in life and thinks to be worth sharing with the World.
@@ -22,6 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kumaranimesh.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: animesh21
 github_username:  animesh21
+facebook_username: animesh0721
 
 # Build settings
 markdown: kramdown

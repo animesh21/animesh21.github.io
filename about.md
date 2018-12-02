@@ -4,15 +4,13 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+This is Animesh Kumar, a software developer based out of India.
+He is a tech enthusiast and believes in lifelong learning.
+He likes to do courses on [edX][edx-website] in his free time.<br />
+If you liked this blog and want to build a blog similar to this one,
+you can fork the github repository [here](https://github.com/animesh21/animesh21.github.io),
+replace the details with yours, and publish it on [github pages](https://pages.github.com/)
+for free.
 
 
-[jekyll-organization]: https://github.com/jekyll
+[edx-website]: https://edx.org/
