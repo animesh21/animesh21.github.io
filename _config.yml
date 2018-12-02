@@ -41,3 +41,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+share-links-active:
+  twitter: true
+  facebook: true
