@@ -48,8 +48,8 @@ rather than reading the standalone code and guessing what it is supposed to do.
 
 <p>
 When you have a test suite with a decent coverage. You can extend the functionality and test it regressively
-to ensure that the existing functionality is not breaking. Then add your new test cases to
-test the new functionality as well to be working correctly as well.
+to ensure that the existing functionality is not breaking. Then add your test cases to
+test the new functionality as well.
 </p>
 
 <h2> TDD Example </h2>
