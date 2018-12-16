@@ -3,13 +3,14 @@ layout: post
 title:  "In Fond Memory of My Loving Pet, Picksy!"
 date:   2018-12-02 16:30:00 +0530
 categories: blog post
+tags: [pet, picksy]
 ---
 Meet Picksy:<br /><br />
 
 ![Picksy's photo](/assets/images/picksy_002.jpeg)
 
-She had been with my family since 1<sup>st</sup> May 2005 and she was like a family member. She left
-her body on 27<sup>th</sup> November 2018.
+She had been with my family since 1<sup>st</sup> May 2005 and she was the most loved family member.
+She left her body on 27<sup>th</sup> November 2018.
 We were so much accustomed to her that it's been very difficult to accept that she has left.
 <br />
 
