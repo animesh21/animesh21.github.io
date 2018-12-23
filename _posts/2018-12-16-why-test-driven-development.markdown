@@ -6,7 +6,7 @@ categories: blog post
 tags: ["TDD", "Test Driven Development"]
 ---
 This blog starts with a brief definition of Test Driven Development.
-Then we recall the basic goals of writing code and understand how <abbr title="Test Driven Development">TDD</abbr> 
+Then we recall the basic goals of programming and understand how <abbr title="Test Driven Development">TDD</abbr> 
 is essential for achieving these goals. Then we'll see a very basic hands-on example of <abbr title="Test Driven Development">TDD</abbr>
 in [Python](https://en.wikipedia.org/wiki/Python_(programming_language)){:target="_blank"}.
 
@@ -26,9 +26,9 @@ information on <abbr title="Test Driven Development">TDD</abbr>, click
 
 
 Let's get back to the basics and recall our basic goals while we're writing code:
-1. It should be correct, today and in the unknown future
-2. It should be readable to other programmers as well as future *You*
-3. It should be extensible i.e. ready to incorporate new changes without a re-write
+1. The code should be correct, today and in the unknown future
+2. The code should be readable for other programmers as well as future *You*
+3. The code should be extensible i.e. ready to incorporate new changes without a re-write
 
 
 <h4> Goal #1</h4>
@@ -39,7 +39,7 @@ We achieve this with TDD as we write the correct version of the code in the firs
 
 <h4> Goal #2</h4>
 Usually we break the test cases into different functions with each of them explaining the aspect of
-specification they are testing. This makes reading the code easier as you know what it is expected to do
+specification they are testing. This makes reading the code easier as you know what the code is expected to do
 rather than reading the standalone code and guessing what it is supposed to do.
 <p>
 </p>
@@ -59,9 +59,11 @@ Most of us start to learn coding with a simple <code>print("Hello, World!")</cod
 written it correctly or not? Well, it's simple, we run the program and see the result.
 </p>
 <p>
-Then, on a later stage, we are asked to write a program to find if <b>N</b> is a prime number or not.
-We build our logic and implement it on code. To check if it's correct or not, we try it on some selected inputs.
-If the output is correct, we assume it to be correct. Below is one such program:
+Then, on a later stage, if we are asked to write a program to find if <b>N</b> is a prime number or not.
+We build our logic and implement it on code. To check if it's correct or not, we try it on some random inputs.
+If the output is correct, we assume the program to be correct. And that's where we go wrong. We develop a habit of writing code
+and then test it manually for some random inputs or some edge cases. As we get experienced with programming, we become
+so confident that we omit the testing part at all. Below is one such program:
 </p>
 
 {% highlight python %}
@@ -86,8 +88,7 @@ print(is_prime(557))
 {% endhighlight %}
 
 <p>
-I can assume it to be correct on the basis of my testing. But suddenly I realise that I've missed a test case 
-i.e. giving 1 as an input to the program. Let's try that as well:
+I can assume it to be correct on the basis of my testing. But when I give 1 as input, it fails as shown below:
 </p>
 
 {% highlight python %}
@@ -96,36 +97,13 @@ print(is_prime(1))
 {% endhighlight %}
 
 <p>
-It seems to be incorrect. I quickly modify my program and test again as below:
-</p>
-
-{% highlight python %}
-def is_prime(n):
-    """
-    :param n: int, greater than or equal to 1
-    :return: bool, True if n is prime else False
-    """
-    if n >= 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
-
-print(is_prime(1))
-#=> prints 'False'
-{% endhighlight %}
-
-<p>
-Seems like I've fixed the bug, isn'it it. Actually I've introduced another bug in the program while fixing 
-the earlier one. Here it might seem like a silly mistake but believe me, as the program grows in complexity,
-such mistakes are likely to occur.
-</p>
-
-<p>
-Enter <abbr title="Test Driven Development">TDD</abbr> to take us out of this buggy business.
-Now we'll write some automated test cases for our function <code>is_prime</code> and keep it's 
-definition empty on purpose.
+Had we written test cases at the first place, we could have avoided this bug. Below is the 
+<abbr title="Test Driven Development">TDD</abbr> approach for the same program. For simplicity,
+I've not used Python's <a href="https://docs.python.org/3.7/library/unittest.html"><i>unittest</i></a>
+module and instead wrote a simple function <code>test_is_prime</code> to test the <code>is_prime</code>
+function.
+<br />
+Notice how we have kept the definition of <code>is_prime</code> empty on purpose.
 </p>
 
 {% highlight python %}
@@ -192,37 +170,7 @@ AssertionError: 1 is not a prime number while `is_prime` returned `True`
 
 
 <p>
-Now again our buggy implementation to get fix this 1 as input proglem:
-</p>
-
-{% highlight python %}
-def is_prime(n):
-    """
-    :param n: int, greater than or equal to 1
-    :return: bool, True if n is prime else False
-    """
-    if n >= 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
-
-test_is_prime()
-#=> Output:
-Traceback (most recent call last):
-  File "is_prime.py", line 33, in <module>
-    test_is_prime()
-  File "is_prime.py", line 23, in test_is_prime
-    assert result is True, "{} is a prime number while `is_prime` returned `False`".format(n)
-AssertionError: 2 is a prime number while `is_prime` returned `False`
-
-{% endhighlight %}
-
-
-<p>
-Now we fix this by changing <code>if n >= 1:</code> to <code>if n == 1:</code> in the definition of
-<code>is_prime</code>
+Now fixing this 1 as input problem:
 </p>
 
 {% highlight python %}
@@ -254,7 +202,7 @@ pain of debugging the program later as we've written the program correct in the 
 That's why we say:
 </p>
 
-<em>Testing rock, debugging sucks.</em>
+<em>Testing rocks, debugging sucks.</em>
 
 <p>
 The source code of the final version of the program that we wrote above is available below. Download and try it yourself:
@@ -262,5 +210,5 @@ The source code of the final version of the program that we wrote above is avail
 
 [source code](/assets/scripts/is_prime.py)
 
-You can email me any questions/suggestions regarding this blog on my email address provided below or ping me on
-the social media links as well.
+You can email me any questions/suggestions regarding this blog on my email address or ping me on the networking links provided below
+in the footer.
